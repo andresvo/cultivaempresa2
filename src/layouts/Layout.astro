@@ -1,6 +1,6 @@
 ---
 interface Props {
-	title: string;
+  title: string;
 }
 
 const { title } = Astro.props;
@@ -8,43 +8,119 @@ const { title } = Astro.props;
 
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="description" content="Astro description" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
-	</head>
-	<body>
-		<slot />
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Astro description" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body>
+    <header
+      class="bg-verde xl:bg-transparent xl:absolute top-0 w-full text-white pt-6"
+    >
+      <div class="max-w-screen-xl mx-auto flex justify-between items-center">
+        <div id="primary-menu-trigger" class="w-[150px]">
+          MENU<i class="icon-reorder"></i>
+        </div>
+        <a href="/">
+          <img
+            src="/img/home/elementos/home-02.png"
+            alt="Cultiva Logo"
+            class="w-[150px]"
+          />
+        </a>
+        <img
+          src="/img/home/elementos/home-03.png"
+          alt="Servicios Ambientales"
+          class="w-[150px]"
+        />
+      </div>
+    </header>
+
+    <slot />
+
+    <footer class="bg-verde-oscuro text-white py-12">
+      <div
+        class="max-w-screen-xl mx-auto border-b pb-4 flex justify-between text-sm"
+      >
+        <div>
+          <img
+            src="/img/home/elementos/home-11.png"
+            alt="Logo Cultiva"
+            width="25"
+          />
+        </div>
+        <div>
+          <address class="not-italic">
+            Santa Julia 514 <br /> Comuna de Ñuñoa, Santiago.
+          </address>
+        </div>
+        <div>
+          <p>+562 2226 7497 <br /> +562 2227 3458</p>
+          <a href="mailto:servicioscompensacion@cultiva.cl"
+            >servicioscompensacion@cultiva.cl</a
+          >
+        </div>
+        <div>
+          <img
+            src="/img/menu/ESP-Latam-B-Corp-Logo-Tagline-Lockup-Esta-ndares-White-RGB.png"
+            alt="empresa"
+            width="180"
+          />
+        </div>
+      </div>
+    </footer>
+  </body>
 </html>
-<style is:global>
-	:root {
-		--accent: 136, 58, 234;
-		--accent-light: 224, 204, 250;
-		--accent-dark: 49, 10, 101;
-		--accent-gradient: linear-gradient(
-			45deg,
-			rgb(var(--accent)),
-			rgb(var(--accent-light)) 30%,
-			white 60%
-		);
-	}
-	html {
-		font-family: system-ui, sans-serif;
-		background: #13151a;
-	}
-	code {
-		font-family:
-			Menlo,
-			Monaco,
-			Lucida Console,
-			Liberation Mono,
-			DejaVu Sans Mono,
-			Bitstream Vera Sans Mono,
-			Courier New,
-			monospace;
-	}
+
+<style is:global lang="scss">
+  @font-face {
+    font-family: "Maax";
+    src: url("/fonts/Maax-Regular.woff2") format("woff2");
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: "Maax";
+    src: url("/fonts/Maax-Light.woff2") format("woff2");
+    font-weight: 300;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: "Maax";
+    src: url("/fonts/Maax-Medium.woff2") format("woff2");
+    font-weight: 500;
+    font-style: normal;
+  }
+
+  body {
+    font-family: "Maax", sans-serif;
+  }
+
+  .text-shadow {
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
+  }
+  .bg-gradient {
+    transition: all 0.3s ease-in-out;
+    opacity: 0.85;
+    background: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0) 0,
+      rgba(0, 0, 0, 0.85) 100%
+    );
+  }
+  .columna {
+    &:hover .bg-gradient {
+      opacity: 1;
+      background: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0) 0,
+        rgba(0, 0, 0, 0.85) 100%
+      );
+    }
+  }
 </style>
