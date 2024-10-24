@@ -1,5 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import "../styles/font-icons.css";
+import "../styles/animate.css";
 ---
 
 <Layout title="Cultiva Empresa">
@@ -69,9 +71,16 @@ import Layout from "../layouts/Layout.astro";
           </div>
         </div>
       </a>
+      <a
+        href="#somos"
+        class="dark one-page-arrow absolute bottom-8 left-0 right-0 mx-auto"
+        ><i class="icon-line-arrow-down infinite animated fadeInDown text-3xl"
+        ></i></a
+      >
     </section>
 
     <section
+      id="somos"
       class="text-center bg-[url(/uploads/2019/04/foto-home.jpg)] bg-cover text-white py-16"
     >
       <h2 class="text-3xl font-medium tracking-wide">
@@ -85,7 +94,7 @@ import Layout from "../layouts/Layout.astro";
       </p>
       <p>
         <a
-          href="https://www.youtube.com/watch?v=1qNQ_PWEeZE"
+          href="//www.youtube.com/embed/1qNQ_PWEeZE?autoplay=1"
           data-lightbox="iframe"
         >
           <img
@@ -96,6 +105,15 @@ import Layout from "../layouts/Layout.astro";
         </a>
       </p>
     </section>
+
+    <div class="lightbox">
+      <div class="text-right w-full max-w-screen-lg aspect-video">
+        <button title="Close (Esc)" type="button" class="text-white text-3xl"
+          >×</button
+        ><iframe class="w-full h-full" src="" frameborder="0" allowfullscreen=""
+        ></iframe>
+      </div>
+    </div>
 
     <section class="max-w-screen-lg mx-auto px-4">
       <h2
@@ -165,4 +183,21 @@ import Layout from "../layouts/Layout.astro";
       </ul>
     </section>
   </main>
+
+  <script is:inline>
+    // lightbox
+    document.querySelectorAll("[data-lightbox]").forEach((el) => {
+      el.addEventListener("click", (e) => {
+        e.preventDefault();
+        document.querySelector(".lightbox").classList.add("active");
+        document.querySelector("iframe").src = el.href;
+      });
+    });
+
+    // cerrar lightbox
+    document.querySelector(".lightbox button").addEventListener("click", () => {
+      document.querySelector(".lightbox").classList.remove("active");
+      document.querySelector("iframe").src = "";
+    });
+  </script>
 </Layout>

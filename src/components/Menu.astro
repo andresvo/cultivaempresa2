@@ -1,0 +1,78 @@
+<div
+  id="overlay-menu"
+  class="w-full min-h-screen z-50 absolute top-0 left-0 bg-verde text-white bg-[url(/img/menu/menu-05.jpg)] bg-cover"
+>
+  <div class="w-full min-h-screen overlay flex flex-col justify-between">
+    <div
+      class="w-full max-w-screen-xl mx-auto pt-8 pb-12 flex justify-between items-center"
+    >
+      <div class="w-[150px]"></div>
+      <a href="/">
+        <img
+          src="/img/home/elementos/home-02.png"
+          alt="Cultiva Logo"
+          class="w-[150px]"
+        />
+      </a>
+      <a
+        href="#"
+        id="overlay-menu-close"
+        class="w-[150px] d-none d-lg-block text-2xl text-right"
+        ><i class="icon-line-cross"></i></a
+      >
+    </div>
+    <nav class="text-center text-xl">
+      <ul>
+        <li class="my-8">
+          <a href="#" class="inline-block">Plan de Manejo <br /> Forestal</a>
+        </li>
+        <li class="my-8">
+          <a href="#" class="inline-block"
+            >Plan de Compensación <br /> de Emisiones</a
+          >
+        </li>
+        <li class="my-8">
+          <a href="#" class="inline-block"
+            >Medición y Compensación <br /> Huella de Carbono</a
+          >
+        </li>
+        <li class="my-8">
+          <a href="#" class="inline-block">Áreas Verdes</a>
+        </li>
+        <li class="my-8"><a href="#" class="inline-block">Vivero</a></li>
+        <li class="my-8"><a href="#" class="inline-block">Contacto</a></li>
+      </ul>
+    </nav>
+
+    <div
+      class="flex justify-between items-end text-sm w-full max-w-screen-xl mx-auto pb-10"
+    >
+      <div>
+        <p>Santa Julia 514 <br /> Ñuñoa, Santiago</p>
+        <hr class="border-t-2 w-4 my-2" />
+        <span></span><p>+5622 22 674 97</p>
+        <hr class="border-t-2 w-4 my-2" />
+        <span></span><p>servicioscompensacion@cultiva.cl</p>
+      </div>
+      <div>
+        <img
+          src="https://cultivaempresa.cl/wp-content/themes/cutlvia/imagenes/cultiva/menu/ESP-Latam-B-Corp-Logo-Tagline-Lockup-Esta-ndares-White-RGB.png"
+          alt="empresa"
+          width="180"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+
+<style lang="scss">
+  #overlay-menu {
+    display: none;
+    &.active {
+      display: block;
+    }
+  }
+  .overlay {
+    background-color: rgba(0, 0, 0, 0.3);
+  }
+</style>
