@@ -1,0 +1,55 @@
+---
+const posts = Object.values(
+  await import.meta.glob("../content/proyectos/*.md", { eager: true })
+);
+---
+
+<section id="proyectos">
+  <div class="container">
+    <div class="heading-block center">
+      <h2>Alguno de Nuestros Proyectos</h2>
+      <ul>
+        {
+          posts.map((post: any) => (
+            <li>
+              <div class="oc-item">
+                <div class="row clearfix">
+                  <div
+                    class="col-lg-7 col-md-6 col-padding"
+                    style={`background: url('${post.frontmatter.thumbnail}') center 45% no-repeat; background-size: cover;padding: 0 0 200px;`}
+                  />
+
+                  <div class="col-lg-5 col-md-6 col-padding">
+                    <div class="heading-block">
+                      <small>{post.frontmatter.year}</small>
+                      <h4
+                        set:html={post.frontmatter.title.replace(
+                          /\n/g,
+                          "<br />"
+                        )}
+                      />
+                      <span>{post.frontmatter.description}</span>
+                    </div>
+
+                    <div class="text-left">
+                      <h5>
+                        Total Superficie: <span>{post.frontmatter.area}</span>
+                      </h5>
+                      <a
+                        href="#modalProyecto"
+                        data-lightbox="inline"
+                        class="button button-small text-uppercase"
+                      >
+                        Ver más
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </div>
+</section>
