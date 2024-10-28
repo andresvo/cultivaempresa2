@@ -39,7 +39,7 @@ const posts = Object.values(
                   <strong>Total Superficie:</strong> {post.frontmatter.area}
                 </p>
                 <a
-                  href="#modalProyecto"
+                  href={`#modal-${post.frontmatter.id}`}
                   data-lightbox="inline"
                   class="inline-block px-10 py-2 bg-verde text-white text-xs font-medium uppercase mt-4"
                 >
@@ -60,20 +60,55 @@ const posts = Object.values(
     <div class="swiper-pagination"></div>
   </div>
 
-  <div class="lightbox">
-    <div class="absolute right-3 top-1">
-      <button title="Close (Esc)" type="button" class="text-white text-3xl"
-        >×</button
-      >
-    </div>
-    <div class="w-full max-w-screen-lg bg-white">
-      <div
-        class="h-80 bg-[url(/uploads/2019/04/cerro_chena-slider1.jpg)] bg-cover"
-      >
+  {
+    posts.map((post: any) => (
+      <div class="lightbox" id={`modal-${post.frontmatter.id}`}>
+        <div class="absolute right-3 top-1">
+          <button
+            title="Cerrar"
+            type="button"
+            class="close-modal text-white text-3xl"
+            id={`close-modal-${post.frontmatter.id}`}
+          >
+            ×
+          </button>
+        </div>
+        <div class="absolute top-0 w-full max-w-screen-lg bg-white text-center pb-24">
+          <div class="h-80 bg-[url(/uploads/2019/04/cerro_chena-slider1.jpg)] bg-cover" />
+          <h2
+            class="text-xl font-bold leading-8 tracking-wide text-verde text-center pt-12"
+            set:html={post.frontmatter.title.replace(/\n/g, "<br />")}
+          />
+          <hr class="w-4 border-t-2 border-verde mt-4 mb-1 mx-auto" />
+          <p class="text-verde">{post.frontmatter.year}</p>
+          <p class="text-neutral-500 font-light text-sm max-w-screen-sm mx-auto my-4">
+            {post.content}
+          </p>
+          <div class="grid grid-cols-3 mt-16 text-left max-w-screen-md mx-auto text-verde">
+            <div class="px-8">
+              <h5 class="font-bold">Cliente</h5>
+              <hr class="w-4 border-t-2 border-verde mb-4 mt-2" />
+            </div>
+            <div class="px-8 border-l-2 border-verde">
+              <h5 class="font-bold">Superficie (ha)</h5>
+              <hr class="w-4 border-t-2 border-verde mb-4 mt-2" />
+            </div>
+            <div class="px-8 border-l-2 border-verde">
+              <h5 class="font-bold">Total Plantas</h5>
+              <hr class="w-4 border-t-2 border-verde mb-4 mt-2" />
+            </div>
+            {post.frontmatter.clients.map((client: any) => (
+              <>
+                <p class="px-8 py-2">{client.name}</p>
+                <p class="px-8 py-2 border-l-2 border-verde">{client.area}</p>
+                <p class="px-8 py-2 border-l-2 border-verde">{client.plants}</p>
+              </>
+            ))}
+          </div>
+        </div>
       </div>
-      Cerro Chena
-    </div>
-  </div>
+    ))
+  }
 </section>
 
 <!-- Swiper JS -->
@@ -99,16 +134,33 @@ const posts = Object.values(
   });
 
   // lightbox
-  document.querySelectorAll("[data-lightbox=inline]").forEach((el) => {
-    el.addEventListener("click", (e) => {
-      e.preventDefault();
-      document.querySelector(".lightbox").classList.add("active");
+  function openModal(modalId) {
+    document.getElementById(modalId).classList.add("active");
+    document.body.classList.add("no-scroll");
+  }
+
+  function closeModal(modalId) {
+    document.getElementById(modalId).classList.remove("active");
+    document.body.classList.remove("no-scroll");
+  }
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const buttons = document.querySelectorAll('[data-lightbox="inline"]');
+    buttons.forEach((button) => {
+      button.addEventListener("click", (event) => {
+        event.preventDefault();
+        const modalId = button.getAttribute("href").substring(1);
+        openModal(modalId);
+      });
     });
   });
 
-  // cerrar lightbox
-  document.querySelector(".lightbox button").addEventListener("click", () => {
-    document.querySelector(".lightbox").classList.remove("active");
+  const closeButtons = document.querySelectorAll(".close-modal");
+  closeButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      const modalId = button.id.replace("close-", "");
+      closeModal(modalId);
+    });
   });
 </script>
 
