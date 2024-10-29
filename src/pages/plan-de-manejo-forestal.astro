@@ -11,7 +11,7 @@ import "../styles/animate.css";
     <section
       class="text-white h-[100vh] bg-verde bg-[url(/uploads/2019/04/plan_manejo-forestal-slider1-1.jpg)] bg-cover bg-center flex items-center justify-start"
     >
-      <div class="w-full max-w-screen-xl mx-auto">
+      <div class="w-full max-w-screen-xl mx-auto px-4 xl:px-0">
         <h1 class="font-medium text-2xl">Plan de Manejo Forestal</h1>
         <hr class="border-t-2 w-16 my-4" />
         <h2 class="font-medium text-4xl max-w-[800px]">
@@ -20,7 +20,7 @@ import "../styles/animate.css";
       </div>
       <a
         href="#que"
-        class="dark one-page-arrow absolute bottom-8 left-0 right-0 mx-auto text-right pr-16"
+        class="hidden xl:block dark one-page-arrow absolute bottom-8 left-0 right-0 mx-auto text-right pr-16"
         ><i class="icon-line-arrow-down infinite animated fadeInDown text-3xl"
         ></i></a
       >
@@ -28,7 +28,7 @@ import "../styles/animate.css";
 
     <section
       id="que"
-      class="max-w-screen-xl mx-auto grid grid-cols-5 gap-8 py-20"
+      class="max-w-screen-xl mx-auto grid grid-cols-1 xl:grid-cols-5 gap-8 py-20"
     >
       <div class="col-span-2">
         <h2 class="text-verde text-3xl font-medium tracking-wide">
@@ -69,7 +69,9 @@ import "../styles/animate.css";
     </section>
 
     <section class="bg-verde text-white">
-      <div class="max-w-screen-xl mx-auto grid grid-cols-2 gap-8 py-20">
+      <div
+        class="max-w-screen-xl mx-auto grid grid-cols-1 xl:grid-cols-2 gap-8 py-20"
+      >
         <div>
           <h2 class="text-3xl font-medium tracking-wide">¿Cómo lo hacemos?</h2>
           <hr class="w-16 border-t-2 border-white my-4" />
@@ -94,7 +96,7 @@ import "../styles/animate.css";
       </div>
 
       <div
-        class="etapas w-full max-w-screen-xl mx-auto flex justify-around pb-24 relative text-sm"
+        class="etapas w-full max-w-screen-xl mx-auto flex flex-col xl:flex-row justify-around pb-24 relative text-sm"
       >
         <div class="item">
           <img src="/img/forestal/elementos/plandemanejo-02.png" />
@@ -148,7 +150,7 @@ import "../styles/animate.css";
         <h2 class="text-3xl font-medium tracking-wide">Indicadores de Éxito</h2>
         <hr class="w-16 border-t-2 border-white my-4 mx-auto" />
 
-        <div class="grid grid-cols-5 mt-12">
+        <div class="grid grid-cols-1 xl:grid-cols-5 mt-12">
           <div class="px-4 border-r">
             <img src="/img/forestal/elementos/plandemanejo-09.png" />
             <div class="counter counter-lined">
@@ -285,39 +287,43 @@ import "../styles/animate.css";
       left: 0;
       right: 0;
     }
-    .etapas:after {
-      content: "";
-      display: block;
-      height: 1px;
-      width: 84%;
-      position: absolute;
-      margin: auto;
-      left: 0;
-      right: 0;
-      bottom: 60px;
-      background-image: -webkit-gradient(
-        linear,
-        left top,
-        right top,
-        color-stop(50%, transparent),
-        color-stop(20%, #fff)
-      );
-      background-image: linear-gradient(to right, transparent 50%, #fff 20%);
-      background-size: 20px 100%;
-      margin-left: 9.5%;
+    /* xl only */
+    @media (min-width: 1280px) {
+      .etapas:after {
+        content: "";
+        display: block;
+        height: 1px;
+        width: 84%;
+        position: absolute;
+        margin: auto;
+        left: 0;
+        right: 0;
+        bottom: 60px;
+        background-image: -webkit-gradient(
+          linear,
+          left top,
+          right top,
+          color-stop(50%, transparent),
+          color-stop(20%, #fff)
+        );
+        background-image: linear-gradient(to right, transparent 50%, #fff 20%);
+        background-size: 20px 100%;
+        margin-left: 9.5%;
+      }
+      .etapas .item:before {
+        content: "";
+        display: block;
+        height: 12px;
+        width: 1px;
+        border: 1px solid;
+        position: absolute;
+        margin: auto;
+        left: 0;
+        right: 0;
+        bottom: -35px;
+      }
     }
-    .etapas .item:before {
-      content: "";
-      display: block;
-      height: 12px;
-      width: 1px;
-      border: 1px solid;
-      position: absolute;
-      margin: auto;
-      left: 0;
-      right: 0;
-      bottom: -35px;
-    }
+
     .etapas img {
       width: 100px;
       height: 100px;

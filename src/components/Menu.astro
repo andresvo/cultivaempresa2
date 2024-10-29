@@ -1,27 +1,27 @@
 <div
   id="overlay-menu"
-  class="w-full min-h-screen z-50 absolute top-0 left-0 bg-verde text-white bg-[url(/img/menu/menu-05.jpg)] bg-cover"
+  class="w-full xl:min-h-screen z-50 absolute top-0 left-0 bg-verde text-white xl:bg-[url(/img/menu/menu-05.jpg)] bg-cover"
 >
-  <div class="w-full min-h-screen overlay flex flex-col justify-between">
+  <div class="w-full xl:min-h-screen overlay flex flex-col justify-between">
     <div
-      class="w-full max-w-screen-xl mx-auto pt-8 pb-12 flex justify-between items-center"
+      class="w-full max-w-screen-xl mx-auto pt-4 xl:pt-8 pb-12 flex justify-between items-center"
     >
-      <div class="w-[150px]"></div>
+      <div class="w-[90px] xl:w-[150px]"></div>
       <a href="/">
         <img
           src="/img/home/elementos/home-02.png"
           alt="Cultiva Logo"
-          class="w-[150px]"
+          class="w-[90px] xl:w-[150px]"
         />
       </a>
       <a
         href="#"
         id="overlay-menu-close"
-        class="w-[150px] d-none d-lg-block text-2xl text-right"
+        class="w-[90px] xl:w-[150px] d-none d-lg-block text-2xl text-right pr-4 xl:pr-0"
         ><i class="icon-line-cross"></i></a
       >
     </div>
-    <nav class="text-center text-xl">
+    <nav class="text-center xl:text-xl">
       <ul>
         <li class="my-8">
           <a href="/plan-de-manejo-forestal" class="inline-block"
@@ -49,7 +49,7 @@
     </nav>
 
     <div
-      class="flex justify-between items-end text-sm w-full max-w-screen-xl mx-auto pb-10"
+      class="hidden xl:flex justify-between items-end text-sm w-full max-w-screen-xl mx-auto pb-10"
     >
       <div>
         <p>Santa Julia 514 <br /> Ñuñoa, Santiago</p>
@@ -68,6 +68,23 @@
     </div>
   </div>
 </div>
+
+<script is:inline>
+  // menu
+  const overlayMenuTrigger = document.getElementById("overlay-menu-trigger");
+  const overlayMenuClose = document.getElementById("overlay-menu-close");
+  const overlayMenu = document.getElementById("overlay-menu");
+  const sizeXL = window.matchMedia("(min-width: 1280px)").matches;
+  console.log(sizeXL);
+  overlayMenuTrigger.addEventListener("click", () => {
+    overlayMenu.classList.add("active");
+    if (sizeXL) document.querySelector("body").style.overflow = "hidden";
+  });
+  overlayMenuClose.addEventListener("click", () => {
+    overlayMenu.classList.remove("active");
+    if (sizeXL) document.querySelector("body").style.overflow = "auto";
+  });
+</script>
 
 <style lang="scss">
   #overlay-menu {

@@ -6,13 +6,15 @@ import "../styles/animate.css";
 
 <Layout title="Cultiva Empresa">
   <main>
-    <section class="grid grid-cols-4 text-white text-center h-[100vh]">
+    <section
+      class="grid grid-cols-2 xl:grid-cols-4 text-white text-center h-[100vh]"
+    >
       <a
         href="/plan-de-manejo-forestal"
         class="columna bg-[url('/img/home/home-01.jpg')] bg-cover bg-scroll flex flex-col justify-end"
       >
         <div class="bg-gradient">
-          <h2 class="text-xl text-shadow">Plan de Manejo <br /> Forestal</h2>
+          <h2 class="xl:text-xl text-shadow">Plan de Manejo <br /> Forestal</h2>
           <div class="h-48 mt-4">
             <img
               src="/img/home/elementos/home-04.png"
@@ -27,7 +29,7 @@ import "../styles/animate.css";
         class="columna bg-[url('/img/home/home-02.jpg')] bg-cover bg-scroll flex flex-col justify-end"
       >
         <div class="bg-gradient">
-          <h2 class="text-xl text-shadow">
+          <h2 class="xl:text-xl text-shadow">
             Plan de Compensación <br /> de Emisiones
           </h2>
           <div class="h-48 mt-4">
@@ -44,7 +46,7 @@ import "../styles/animate.css";
         class="columna bg-[url('/img/home/medicion.jpg')] bg-cover bg-scroll flex flex-col justify-end"
       >
         <div class="bg-gradient">
-          <h2 class="text-xl text-shadow">
+          <h2 class="xl:text-xl text-shadow">
             Medición y Compensación <br />Huella de Carbono
           </h2>
           <div class="h-48 mt-4">
@@ -61,7 +63,7 @@ import "../styles/animate.css";
         class="columna bg-[url('/img/home/areas-verdes-home.jpg')] bg-cover bg-scroll flex flex-col justify-end"
       >
         <div class="bg-gradient">
-          <h2 class="text-xl text-shadow">Áreas Verdes</h2>
+          <h2 class="xl:text-xl text-shadow">Áreas Verdes</h2>
           <div class="h-48 mt-4">
             <img
               src="/img/home/elementos/home-04.png"
@@ -73,7 +75,7 @@ import "../styles/animate.css";
       </a>
       <a
         href="#somos"
-        class="dark one-page-arrow absolute bottom-8 left-0 right-0 mx-auto"
+        class="hidden xl:block dark one-page-arrow absolute bottom-8 left-0 right-0 mx-auto"
         ><i class="icon-line-arrow-down infinite animated fadeInDown text-3xl"
         ></i></a
       >
@@ -81,13 +83,13 @@ import "../styles/animate.css";
 
     <section
       id="somos"
-      class="text-center bg-[url(/uploads/2019/04/foto-home.jpg)] bg-cover text-white py-16"
+      class="text-center bg-[url(/uploads/2019/04/foto-home.jpg)] bg-cover bg-center text-white py-16"
     >
       <h2 class="text-3xl font-medium tracking-wide">
         Somos <br /> Cultiva Empresa
       </h2>
       <hr class="w-16 mx-auto border-t-2 my-4" />
-      <p class="max-w-xl mx-auto text-xl font-light mb-12">
+      <p class="max-w-xl mx-auto px-10 xl:px-0 text-xl font-light mb-12">
         Somos una empresa de impacto positivo que desde el año 2010 elaboramos e
         implementamos las compensaciones ambientales de nuestros clientes que
         derivan de las normativas vigentes, en forma eficaz y confiable.
@@ -122,7 +124,7 @@ import "../styles/animate.css";
         Han confiado en nosotros
       </h2>
       <hr class="w-16 mx-auto border-t-2 border-verde my-6" />
-      <ul class="grid grid-cols-4 mt-10 mb-32">
+      <ul class="grid grid-cols-2 xl:grid-cols-4 mt-10 mb-32">
         <li>
           <img src="/uploads/2019/04/home-12.jpg" alt="" />
         </li>
