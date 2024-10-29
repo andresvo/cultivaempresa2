@@ -1,0 +1,122 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Proyectos from "../components/Proyectos.astro";
+import Conversemos from "../components/Conversemos.astro";
+import "../styles/font-icons.css";
+import "../styles/animate.css";
+---
+
+<Layout title="Medición y Compensación de Huella de Carbono - Cultiva Empresa">
+  <main>
+    <section
+      class="text-white h-[100vh] bg-verde bg-[url(/uploads/2022/11/medicion2.jpg)] bg-cover bg-center flex items-center justify-start"
+    >
+      <div class="w-full max-w-screen-xl mx-auto">
+        <h1 class="font-medium text-2xl">Medición de Huella de Carbono</h1>
+        <hr class="border-t-2 w-16 my-4" />
+        <h2 class="font-medium text-4xl max-w-[800px]">
+          Crisis Climática e identificación de fuentes de Gases de efecto
+          invernadero (GEI)
+        </h2>
+      </div>
+      <a
+        href="#que"
+        class="dark one-page-arrow absolute bottom-8 left-0 right-0 mx-auto text-right pr-16"
+        ><i class="icon-line-arrow-down infinite animated fadeInDown text-3xl"
+        ></i></a
+      >
+    </section>
+
+    <section id="que" class="bg-degrade">
+      <div class="max-w-screen-xl mx-auto grid grid-cols-12">
+        <div class="col-span-5 py-12 pr-10 bg-white">
+          <p class="text-lg font-medium text-verde">
+            Acompañamos a las empresas y organizaciones en sus desafíos de
+            sustentabilidad, evaluando sus emisiones de GEI, determinando su
+            impacto y desarrollando estrategias de mitigación y compensación.
+          </p>
+          <div class="text-base font-light text-neutral-700">
+            <p class="my-8">
+              Diseñamos acciones específicas para ser un aporte real en la lucha
+              contra la crisis climática. En este sentido, cuantificamos las
+              emisiones de GEI en todas las etapas de operación, con el objetivo
+              de incentivar la optimización de los procesos productivos y el uso
+              de materias primas, permitiendo a las empresas reducir y mitigar
+              sus impactos ambientales.
+            </p>
+            <p class="my-8">¿Qué es la huella de carbono de las empresas?</p>
+            <p class="my-8">
+              Al igual que las personas con la huella de carbono personal, las
+              empresas también realizan actividades que producen gases de efecto
+              invernadero como, por ejemplo, emisiones por el transporte de
+              productos, el transporte de trabajadores, el consumo eléctrico,
+              etc. La huella de carbono de una organización mide todas las
+              emisiones de gases de efecto invernadero emitidas por efecto
+              directo o indirecto a través de la actividad que desarrolla dicha
+              empresa.
+            </p>
+            <p class="my-8">
+              En Cultiva realizamos la identificación de aquellas actividades
+              que representan fuentes emisoras de Gases de Efecto Invernadero
+              (GEI) y cuantificamos el total de emisiones de carbono que han
+              sido emitidas. Estas mediciones pueden ser para algún evento o
+              para la operación general de las organizaciones.
+            </p>
+          </div>
+        </div>
+        <div class="col-span-7 grid grid-cols-12 text-verde bg-neutral-200">
+          <div class="col-span-5 flex justify-center items-start pt-20">
+            <img
+              src="/img/sustentables/elementos/sustentabilidad-11.png"
+              alt="hoja"
+              class="w-[175px]"
+            />
+          </div>
+          <ul class="col-span-7 [&>li]:my-4 pt-8">
+            <li>
+              <i class="icon-line-arrow-right mr-2"></i>Identificación de
+              actividades y fuentes emisoras de GEI.
+            </li>
+            <li>
+              <i class="icon-line-arrow-right mr-2"></i>Elaboración de
+              inventario de actividades.
+            </li>
+            <li>
+              <i class="icon-line-arrow-right mr-2"></i>Uso de metodologías de
+              cálculo de huella de carbono; GHG Protocol e ISO 14.064.
+            </li>
+            <li>
+              <i class="icon-line-arrow-right mr-2"></i>Entrega de informes de
+              resultados.
+            </li>
+            <li>
+              <i class="icon-line-arrow-right mr-2"></i>Acompañamiento en
+              proceso de certificación en programa Huella Chile.
+            </li>
+            <li>
+              <i class="icon-line-arrow-right mr-2"></i>Estrategias de
+              reducción, neutralización y compensación de huella de carbono a
+              través de reforestación nativa y otras soluciones basadas en la
+              naturaleza.
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <Conversemos />
+  </main>
+
+  <style>
+    .bg-degrade {
+      background: rgb(255, 255, 255);
+      background: linear-gradient(
+        90deg,
+        rgba(255, 255, 255, 1) 0%,
+        rgba(255, 255, 255, 1) 45%,
+        rgba(229, 229, 229, 1) 55%,
+        rgba(229, 229, 229, 1) 100%
+      );
+    }
+  </style>
+</Layout>
