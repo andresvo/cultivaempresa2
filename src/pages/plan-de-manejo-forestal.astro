@@ -12,9 +12,9 @@ import "../styles/animate.css";
       class="text-white h-[100vh] bg-verde bg-[url(/uploads/2019/04/plan_manejo-forestal-slider1-1.jpg)] bg-cover bg-center flex items-center justify-start"
     >
       <div class="w-full max-w-screen-xl mx-auto px-4 xl:px-0">
-        <h1 class="font-medium text-2xl">Plan de Manejo Forestal</h1>
+        <h1 class="font-medium text-lg xl:text-2xl">Plan de Manejo Forestal</h1>
         <hr class="border-t-2 w-16 my-4" />
-        <h2 class="font-medium text-4xl max-w-[800px]">
+        <h2 class="font-medium text-3xl xl:text-4xl max-w-[800px]">
           Ejecutamos PMF, abordando el proceso en forma integral
         </h2>
       </div>
@@ -28,14 +28,21 @@ import "../styles/animate.css";
 
     <section
       id="que"
-      class="max-w-screen-xl mx-auto grid grid-cols-1 xl:grid-cols-5 gap-8 py-20"
+      class="max-w-screen-xl mx-auto grid grid-cols-1 xl:grid-cols-5 gap-8 py-20 px-8 xl:px-0"
     >
+      <div class="flex xl:hidden items-end pb-8">
+        <img
+          src="/img/forestal/elementos/plandemanejo-01.png"
+          alt="forestal"
+          class="w-24"
+        />
+      </div>
       <div class="col-span-2">
-        <h2 class="text-verde text-3xl font-medium tracking-wide">
+        <h2 class="text-verde text-2xl xl:text-3xl font-medium tracking-wide">
           ¿Qué es un plan <br class="hidden lg:block" /> de manejo forestal?
         </h2>
         <hr class="w-16 border-t-2 border-verde my-4" />
-        <p class="text-xl font-light text-neutral-500">
+        <p class="xl:text-xl font-light text-neutral-500">
           El Plan de Manejo Forestal [PMF] es un instrumento legal mediante el
           cual se solicita autorización para cortar bosque nativo en un terreno,
           con la finalidad de desarrollar distintos tipos de proyectos (obras
@@ -43,7 +50,7 @@ import "../styles/animate.css";
         </p>
       </div>
       <div class="col-span-2 text-sm text-verde">
-        <p class="mt-20">
+        <p class="xl:mt-20">
           Este documento da cuenta de los detalles del lugar y especies de corta
           (deforestación), como también del lugar de plantación (reforestación),
           para presentarse ante CONAF y obtener su aprobación.
@@ -59,7 +66,7 @@ import "../styles/animate.css";
           nativo
         </p>
       </div>
-      <div class="flex items-end pb-16">
+      <div class="hidden xl:flex items-end pb-16">
         <img
           src="/img/forestal/elementos/plandemanejo-01.png"
           alt="forestal"
@@ -70,16 +77,18 @@ import "../styles/animate.css";
 
     <section class="bg-verde text-white">
       <div
-        class="max-w-screen-xl mx-auto grid grid-cols-1 xl:grid-cols-2 gap-8 py-20"
+        class="max-w-screen-xl mx-auto grid grid-cols-1 xl:grid-cols-2 gap-8 py-12 xl:py-20 px-8 xl:px-0"
       >
         <div>
-          <h2 class="text-3xl font-medium tracking-wide">¿Cómo lo hacemos?</h2>
+          <h2 class="text-2xl xl:text-3xl font-medium tracking-wide">
+            ¿Cómo lo hacemos?
+          </h2>
           <hr class="w-16 border-t-2 border-white my-4" />
-          <p class="text-xl font-light max-w-md">
+          <p class="xl:text-xl font-light max-w-md">
             Elaboramos y ejecutamos Planes de Manejo Forestal, que contemplan
             reforestación de bosque nativo.
           </p>
-          <p class="my-8">
+          <p class="my-4 xl:my-8">
             Lo abordamos de forma integral: gestionando los terrenos para la
             implementación, ejecutando todas las acciones relativas a la
             reforestación, riego y mantención; e ingresando la recepción final
@@ -88,7 +97,7 @@ import "../styles/animate.css";
           </p>
         </div>
         <div class="flex items-end">
-          <p class="my-8 text-lg font-light max-w-md">
+          <p class="xl:my-8 text-lg font-light max-w-md">
             Acompañamos a nuestros clientes en todo este proceso, solucionando
             cada una de las etapas que involucra:
           </p>
@@ -150,7 +159,7 @@ import "../styles/animate.css";
         <h2 class="text-3xl font-medium tracking-wide">Indicadores de Éxito</h2>
         <hr class="w-16 border-t-2 border-white my-4 mx-auto" />
 
-        <div class="grid grid-cols-1 xl:grid-cols-5 mt-12">
+        <div class="grid grid-cols-1 xl:grid-cols-5 mt-12 gap-10 xl:gap-0">
           <div class="px-4 border-r">
             <img src="/img/forestal/elementos/plandemanejo-09.png" />
             <div class="counter counter-lined">
@@ -274,6 +283,7 @@ import "../styles/animate.css";
     .etapas .item {
       text-align: center;
       position: relative;
+      margin-bottom: 2rem;
     }
     .etapas span {
       font-size: 17px;
@@ -282,10 +292,15 @@ import "../styles/animate.css";
     .etapas .item span {
       font-weight: bold;
       font-size: 22px;
-      position: absolute;
-      bottom: -20px;
-      left: 0;
-      right: 0;
+    }
+    .etapas img {
+      width: 80px;
+      height: 80px;
+      margin: auto;
+    }
+    .etapas p {
+      margin-top: 16px;
+      margin-bottom: 16px;
     }
     /* xl only */
     @media (min-width: 1280px) {
@@ -310,6 +325,9 @@ import "../styles/animate.css";
         background-size: 20px 100%;
         margin-left: 9.5%;
       }
+      .etapas .item {
+        margin-bottom: 0;
+      }
       .etapas .item:before {
         content: "";
         display: block;
@@ -322,22 +340,31 @@ import "../styles/animate.css";
         right: 0;
         bottom: -35px;
       }
-    }
-
-    .etapas img {
-      width: 100px;
-      height: 100px;
-      margin: auto;
-    }
-    .etapas p {
-      margin-top: 30px;
-      margin-bottom: 30px;
+      .etapas .item span {
+        position: absolute;
+        bottom: -20px;
+        left: 0;
+        right: 0;
+      }
+      .etapas img {
+        width: 100px;
+        height: 100px;
+      }
+      .etapas p {
+        margin-top: 30px;
+        margin-bottom: 30px;
+      }
     }
 
     #indicadores img {
       width: 100px;
       margin: auto;
-      margin-bottom: 30px;
+      margin-bottom: 1rem;
+    }
+    @media (min-width: 1280px) {
+      #indicadores img {
+        margin-bottom: 30px;
+      }
     }
     .porcentaje {
       display: inline;
