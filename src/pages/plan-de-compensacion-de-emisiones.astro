@@ -10,10 +10,12 @@ import "../styles/animate.css";
     <section
       class="text-white h-[100vh] bg-verde bg-[url(/uploads/2019/04/plan_compensación_emisiones-slider1.jpg)] bg-cover bg-center flex items-center justify-start"
     >
-      <div class="w-full max-w-screen-xl mx-auto">
-        <h1 class="font-medium text-2xl">Plan de Compensación de Emisiones</h1>
+      <div class="w-full max-w-screen-xl mx-auto px-8 xl:px-0">
+        <h1 class="font-medium text-lg xl:text-2xl">
+          Plan de Compensación de Emisiones
+        </h1>
         <hr class="border-t-2 w-16 my-4" />
-        <h2 class="font-medium text-4xl max-w-[800px]">
+        <h2 class="font-medium text-2xl xl:text-4xl max-w-[800px]">
           Acompañamos y gestionamos la elaboración y aprobación de su PCE
         </h2>
       </div>
@@ -27,21 +29,28 @@ import "../styles/animate.css";
 
     <section
       id="que"
-      class="max-w-screen-xl mx-auto grid grid-cols-5 gap-8 py-20"
+      class="max-w-screen-xl mx-auto grid xl:grid-cols-5 gap-8 py-20 px-8 xl:px-0"
     >
-      <div class="col-span-2">
-        <h2 class="text-verde text-3xl font-medium tracking-wide">
+      <div class="flex xl:hidden items-end pb-8">
+        <img
+          src="/img/emisiones/elementos/plancompensacion-01.png"
+          alt="emisiones"
+          class="w-24"
+        />
+      </div>
+      <div class="xl:col-span-2">
+        <h2 class="text-verde text-2xl xl:text-3xl font-medium tracking-wide">
           ¿Qué es un PCE?
         </h2>
         <hr class="w-16 border-t-2 border-verde my-4" />
-        <p class="text-xl font-light text-neutral-500">
+        <p class="xl:text-xl font-light text-neutral-500">
           El Plan de Compensación de Emisiones es un instrumento legal exigido a
           todo proyecto que en sus distintas fases, ya sea en la construcción u
           operación del mismo.
         </p>
       </div>
-      <div class="col-span-2 text-sm text-verde">
-        <p class="mt-20">
+      <div class="xl:col-span-2 text-sm text-verde">
+        <p class="xl:mt-20">
           El PCE supera la norma establecida de emisión de MP10 (Material
           Particulado) y Nox. (Óxidos de nitrógeno. Este plan tiene por
           finalidad producir un efecto positivo equivalente a ese efecto
@@ -55,7 +64,7 @@ import "../styles/animate.css";
           Medioambiente de la región.
         </p>
       </div>
-      <div class="flex items-end pb-16">
+      <div class="hidden xl:flex items-end pb-16">
         <img
           src="/img/emisiones/elementos/plancompensacion-01.png"
           alt="emisiones"
@@ -65,11 +74,15 @@ import "../styles/animate.css";
     </section>
 
     <section class="bg-verde text-white">
-      <div class="max-w-screen-xl mx-auto grid grid-cols-2 gap-8 py-20">
+      <div
+        class="max-w-screen-xl mx-auto grid xl:grid-cols-2 xl:gap-8 py-20 px-8 xl:px-0"
+      >
         <div>
-          <h2 class="text-3xl font-medium tracking-wide">¿Cómo lo hacemos?</h2>
+          <h2 class="text-2xl xl:text-3xl font-medium tracking-wide">
+            ¿Cómo lo hacemos?
+          </h2>
           <hr class="w-16 border-t-2 border-white my-4" />
-          <p class="text-xl font-light max-w-md">
+          <p class="xl:text-xl font-light max-w-md">
             Acompañamos al titular en la elaboración y desarrollo de su Plan de
             Compensación de Emisiones, para MP10 y NOX.
           </p>
@@ -81,7 +94,7 @@ import "../styles/animate.css";
           </p>
         </div>
         <div class="flex flex-col">
-          <p class="my-8 text-lg font-light max-w-md">
+          <p class="my-8 xl:text-lg font-light max-w-md">
             Nos encargamos de la gestión en forma integral, y hacemos el
             seguimiento por el tiempo establecido en el compromiso.
           </p>
@@ -107,12 +120,14 @@ import "../styles/animate.css";
       </div>
     </section>
     <section class="text-verde">
-      <h2 class="text-3xl font-medium tracking-wide pt-16 text-center">
+      <h2
+        class="text-2xl xl:text-3xl font-medium tracking-wide pt-16 text-center"
+      >
         Flujo de trabajo
       </h2>
       <hr class="w-16 border-t-2 border-verde my-4 mx-auto" />
       <div
-        class="etapas dark w-full max-w-screen-xl mx-auto flex justify-around pt-12 pb-32 relative text-sm"
+        class="etapas dark w-full max-w-screen-xl mx-auto flex flex-col xl:flex-row justify-around pt-12 pb-32 relative text-sm"
       >
         <div class="item">
           <img src="/img/emisiones/elementos/plancompensacion-02.png" />
@@ -163,7 +178,9 @@ import "../styles/animate.css";
       class="bg-verde bg-[url(/img/emisiones/plan_compensacion_emisiones-17.jpg)] bg-cover text-white text-center"
     >
       <div class="max-w-screen-xl mx-auto py-20">
-        <h2 class="text-3xl font-medium tracking-wide">Indicadores de Éxito</h2>
+        <h2 class="text-2xl xl:text-3xl font-medium tracking-wide">
+          Indicadores de Éxito
+        </h2>
         <hr class="w-16 border-t-2 border-white my-4 mx-auto" />
 
         <div class="grid grid-cols-2 mt-12 max-w-xl mx-auto">
@@ -245,6 +262,7 @@ import "../styles/animate.css";
     .etapas .item {
       text-align: center;
       position: relative;
+      margin-bottom: 2rem;
     }
     .etapas span {
       font-size: 17px;
@@ -253,52 +271,67 @@ import "../styles/animate.css";
     .etapas .item span {
       font-weight: bold;
       font-size: 22px;
-      position: absolute;
-      bottom: -20px;
-      left: 0;
-      right: 0;
-    }
-    .etapas:after {
-      content: "";
-      display: block;
-      height: 1px;
-      width: 84%;
-      position: absolute;
-      margin: auto;
-      left: 0;
-      right: 0;
-      bottom: 60px;
-      background-image: -webkit-gradient(
-        linear,
-        left top,
-        right top,
-        color-stop(50%, transparent),
-        color-stop(20%, #fff)
-      );
-      background-image: linear-gradient(to right, transparent 50%, #fff 20%);
-      background-size: 20px 100%;
-      margin-left: 9.5%;
-    }
-    .etapas .item:before {
-      content: "";
-      display: block;
-      height: 12px;
-      width: 1px;
-      border: 1px solid;
-      position: absolute;
-      margin: auto;
-      left: 0;
-      right: 0;
-      bottom: -35px;
     }
     .etapas img {
-      width: 100px;
-      height: 100px;
+      width: 80px;
+      height: 80px;
       margin: auto;
     }
     .etapas p {
-      margin-top: 30px;
-      margin-bottom: 30px;
+      margin-top: 16px;
+      margin-bottom: 16px;
+    }
+    @media (min-width: 1280px) {
+      .etapas:after {
+        content: "";
+        display: block;
+        height: 1px;
+        width: 84%;
+        position: absolute;
+        margin: auto;
+        left: 0;
+        right: 0;
+        bottom: 60px;
+        background-image: -webkit-gradient(
+          linear,
+          left top,
+          right top,
+          color-stop(50%, transparent),
+          color-stop(20%, #fff)
+        );
+        background-image: linear-gradient(to right, transparent 50%, #fff 20%);
+        background-size: 20px 100%;
+        margin-left: 9.5%;
+      }
+      .etapas .item:before {
+        content: "";
+        display: block;
+        height: 12px;
+        width: 1px;
+        border: 1px solid;
+        position: absolute;
+        margin: auto;
+        left: 0;
+        right: 0;
+        bottom: -35px;
+      }
+      .etapas .item {
+        margin-bottom: 0;
+      }
+      .etapas .item span {
+        position: absolute;
+        bottom: -20px;
+        left: 0;
+        right: 0;
+      }
+      .etapas img {
+        width: 100px;
+        height: 100px;
+      }
+      .etapas p {
+        margin-top: 30px;
+        margin-bottom: 30px;
+      }
     }
     .etapas.dark:after {
       background-image: -webkit-gradient(
