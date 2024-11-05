@@ -1,6 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Conversemos from "../components/Conversemos.astro";
+import Conversemos from "../components/Conversemos.vue";
 import "../styles/font-icons.css";
 import "../styles/animate.css";
 ---
@@ -144,6 +144,6 @@ import "../styles/animate.css";
       </div>
     </section>
 
-    <Conversemos />
+    <Conversemos client:load />
   </main>
 </Layout>
